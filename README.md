@@ -33,9 +33,13 @@ const newTree = <div>
 
 // Update diffs the vdom trees and apply the changes to the DOM.
 // returns an array representing the series of operations applied
-// for the update
+// for the update.
+// This function mutates the DOM.
 
-// This function mutates the DOM
 update(newTree)
 // #=> [{type: "APPEND", el: "li"}, {type: "APPEND", el: "li"}]
+
+update(tree)
+// #=> [{type: "REMOVE", el: "li"}, {type: "REMOVE", el: "li"}]
+
 ```
