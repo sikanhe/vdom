@@ -6,7 +6,9 @@
 import { render, createElement } from 'vdom'
 
 const tree = createElement('div', [
-  createElement('ul', {}, [])
+  createElement('ul', {}, [
+    createElement('li', {}, ['item']
+  ])
 ])
 
 // or using JSX
@@ -37,9 +39,9 @@ const newTree = <div>
 // This function mutates the DOM.
 
 update(newTree)
-// #=> [{type: "APPEND", el: "li"}, {type: "APPEND", el: "li"}]
+// #=> [{type: "REPLACE", el: "li"}, {type: "APPEND", el: "li"}]
 
 update(tree)
-// #=> [{type: "REMOVE", el: "li"}, {type: "REMOVE", el: "li"}]
+// #=> [{type: "REMOVE", el: "li"}, {type: "REPLACE", el: "li"}]
 
 ```
