@@ -23,6 +23,7 @@ const newTree = createElement('div', [
   ])
 ])
 
+// JSX version
 const newTree = <div>
   <ul>
     <li>hello</li>
